@@ -1,0 +1,32 @@
+#!/bin/sh
+
+# A shell script to gen Dockerfile for ruby with taobao mirror.
+
+if [ $# -ne 0 ];then
+  echo No param allowed.
+fi
+
+create_dockerfile(){
+  filename=Dockerfile
+  cd $1
+  echo "FROM ruby:$1">>$filename 
+  echo "MAINTAINER snowdream <yanghui1986527@gmail.com>">>$filename  
+  echo "RUN gem sources --add https://ruby.taobao.org/ --remove https://rubygems.org/">>$filename  
+  echo "$1/Dockerfile has been created." 
+  echo 
+  cd ..
+}
+
+
+declare -a RUBY_VERSIONS=(
+              "2.1"
+              "2.2"
+              "2.3")
+
+for version in ${RUBY_VERSIONS[@]}
+do
+  if [ ! -d $version ];then
+    mkdir $version
+    create_dockerfile $version
+  fi
+done
