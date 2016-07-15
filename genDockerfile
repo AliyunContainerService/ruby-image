@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # A shell script to gen Dockerfile for ruby with taobao mirror.
 
