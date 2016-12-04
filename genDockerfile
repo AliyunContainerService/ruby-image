@@ -9,9 +9,9 @@ fi
 create_dockerfile(){
   filename=Dockerfile
   cd $1
-  echo "FROM ruby:$1">>$filename 
+  echo "FROM ruby:$1">$filename 
   echo "MAINTAINER snowdream <yanghui1986527@gmail.com>">>$filename  
-  echo "RUN gem sources --add https://ruby.taobao.org/ --remove https://rubygems.org/">>$filename  
+  echo "RUN gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/">>$filename  
   echo "$1/Dockerfile has been created." 
   echo 
   cd ..
@@ -27,6 +27,6 @@ for version in ${RUBY_VERSIONS[@]}
 do
   if [ ! -d $version ];then
     mkdir $version
-    create_dockerfile $version
   fi
+  create_dockerfile $version
 done

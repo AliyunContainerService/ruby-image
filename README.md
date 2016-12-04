@@ -1,6 +1,6 @@
-# Ruby Docker Image with Taobao Mirror
+# Ruby Docker Image with Ruby China Mirror
 ================
-This Docker image is built from the official Ruby image with [Taobao mirror](https://ruby.taobao.org/).
+This Docker image is built from the official Ruby image with [Ruby China mirror](http://gems.ruby-china.org/).
 
 Contributors
 -------------------
