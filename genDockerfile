@@ -12,7 +12,8 @@ create_dockerfile(){
   echo "FROM ruby:$1">$filename 
   echo "MAINTAINER snowdream <yanghui1986527@gmail.com>">>$filename  
   echo "RUN gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/">>$filename  
-  echo "$1/Dockerfile has been created." 
+  echo "RUN bundle config mirror.https://rubygems.org https://gems.ruby-china.org">>$filename
+  echo "$1/Dockerfile has been created."
   echo 
   cd ..
 }
