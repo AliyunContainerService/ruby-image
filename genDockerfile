@@ -29,6 +29,6 @@ for version in ${RUBY_VERSIONS[@]}
 do
   if [ ! -d $version ];then
     mkdir $version
+    create_dockerfile $version
   fi
-  create_dockerfile $version
 done
