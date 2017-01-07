@@ -22,7 +22,8 @@ create_dockerfile(){
 declare -a RUBY_VERSIONS=(
               "2.1"
               "2.2"
-              "2.3")
+              "2.3"
+              "2.4")
 
 for version in ${RUBY_VERSIONS[@]}
 do
